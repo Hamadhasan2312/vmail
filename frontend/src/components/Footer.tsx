@@ -1,62 +1,41 @@
 import { Link } from "react-router-dom";
-import Twitter from "./icons/Twitter.tsx";
-import GitHub from "./icons/GitHub.tsx";
-import MailIcon from "./icons/MailIcon.tsx";
-import WrdoLogo from "./icons/Wrdo.tsx";
+import MailIcon from "./icons/MailIcon.tsx"; // Sirf Email Icon chahiye
 
 /**
- * 网站的页脚组件
+ * The website footer component
  */
 export function Footer() {
   return (
     <div className="text-white w-full mt-auto flex flex-col items-center justify-between px-5 pt-16 mb-10 md:px-10 mx-auto sm:flex-row">
-      <Link to="/" className="text-xl font-black leading-none select-none logo">
-        VMAIL.DEV
+      
+      {/* 1. BRANDING LOGO/TEXT */}
+      <Link to="/" className="text-xl font-black leading-none select-none logo hover:text-cyan-400">
+        TMAILS.ONLINE {/* Changed VMAIL.DEV to TMAILS.ONLINE */}
       </Link>{" "}
+      
+      {/* 2. COPYRIGHT AND AUTHOR */}
       <p className="mt-4 text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-200 sm:mt-0">
-        © 2024 Products of{" "}
+        © 2025 Hamad Hassan | Powered by 
         <a
-          className="font-semibold underline hover:text-gray-600"
-          href="https://www.oiov.dev"
+          className="font-semibold underline hover:text-cyan-400"
+          href="https://tmails.online" // Updated link
           target="_blank"
           rel="noopener noreferrer"
         >
-          oiov
+          Tmails
         </a>
-        .
       </p>
+      
+      {/* 3. SOCIAL ICONS (Only Email Kept) */}
       <div className="inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start">
-        {/* 社交媒体和联系方式链接 */}
         <a
-          href="https://like.do"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="LikeDo"
-          className="text-gray-400 hover:text-gray-500  scale-[1.2]">
-          <WrdoLogo className="w-6 h-6" />
-        </a>
-        <a
-          href="mailto:hi@oiov.dev"
-          title="Email"
-          className="text-gray-400 hover:text-gray-500">
+          href="mailto:hmdhsn5555@gmail.com" // Updated to user's contact email
+          title="Email Contact"
+          className="text-gray-400 hover:text-cyan-400"
+        >
           <MailIcon className="w-6 h-6" />
         </a>
-        <a
-          href="https://twitter.com/yesmoree"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Twitter"
-          className="text-gray-400 hover:text-gray-500">
-          <Twitter />
-        </a>
-        <a
-          href="https://github.com/oiov/vmail"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Github"
-          className="text-gray-400 hover:text-gray-500">
-          <GitHub />
-        </a>
+        {/* Twitter, GitHub, WrdoLogo are REMOVED */}
       </div>
     </div>
   );
