@@ -82,7 +82,7 @@ export function MailList({
       return (
         <div className="w-full items-center h-full flex-col justify-center flex">
           <WaitingEmail />
-          <p className="text-zinc-400 mt-6">请先创建一个临时邮箱地址</p>
+          <p className="text-zinc-400 mt-6">{t("Please create a temporary email address first")}</p> {/* <--- Yahan Fix Hua Hai */}
         </div>
       );
     }
