@@ -5,7 +5,8 @@ export function Terms() {
     <div>
       <div className="max-w-[1400px] ">
         <p className="mt-8">
-          Welcome to Vmail.DEV! These Terms of Service ("Terms") govern your
+          {/* Change 1 */}
+          Welcome to Tmails.ONLINE! These Terms of Service ("Terms") govern your
           access to and use of our website and services. By accessing or using
           our services, you agree to be bound by these Terms. If you do not
           agree to these Terms, please do not use our services.
@@ -15,12 +16,13 @@ export function Terms() {
           1. Description of Service
         </h2>
         <p className="mt-4">
-          Vmail.DEV is a minimalistic temporary email service that allows you to
+          {/* Change 2 */}
+          Tmails.ONLINE is a minimalistic temporary email service that allows you to
           obtain a temporary email address without disclosing any personal
           information, ensuring the protection of your privacy. Our service
           supports the selection of multiple domain names, providing you with
           the convenience of using it in various scenarios. Additionally,
-          Vmail.DEV operates on the Cloudflare network, guaranteeing a
+          Tmails.ONLINE operates on the Cloudflare network, guaranteeing a
           super-fast experience.
         </p>
 
@@ -28,14 +30,15 @@ export function Terms() {
           2. Usage Restrictions
         </h2>
         <p className="mt-4">
-          2.1 Availability: Please note that Vmail.DEV is not available in China
-          Mainland. We apologize for any inconvenience caused.
+          {/* Change 3: Availability Restriction Removed/Updated */}
+          2.1 Availability: Our service is intended for global use.
         </p>
         <p className="mt-4">
-          2.2 Copyright: All copyrights related to Vmail.DEV and its services
-          belong to Vmail.DEV. You may not copy, reproduce, distribute, modify,
-          or create derivative works of Vmail.DEV or any part thereof without
-          explicit permission from Vmail.DEV.
+          {/* Change 4 & 5 */}
+          2.2 Copyright: All copyrights related to Tmails.ONLINE and its services
+          belong to Tmails (Operated by Hamad Hassan). You may not copy, reproduce, distribute, modify,
+          or create derivative works of Tmails.ONLINE or any part thereof without
+          explicit permission from Tmails.ONLINE.
         </p>
 
         <h2 className="mt-8 text-2xl font-bold" id="Deletion of Emails">
@@ -43,12 +46,12 @@ export function Terms() {
         </h2>
         <p className="mt-4">
           3.1 Registration: You are not required to register or provide any
-          personal information to use Vmail.DEV. However, you are solely
+          personal information to use Tmails.ONLINE. However, you are solely
           responsible for maintaining the confidentiality of any temporary email
           addresses generated through our service.
         </p>
         <p className="mt-4">
-          3.2 Prohibited Activities: While using Vmail.DEV, you agree not to
+          3.2 Prohibited Activities: While using Tmails.ONLINE, you agree not to
           engage in any activities that may violate any applicable laws,
           regulations, or these Terms. Prohibited activities include, but are
           not limited to:
@@ -68,9 +71,10 @@ export function Terms() {
           4. Disclaimer of Warranty
         </h2>
         <p className="mt-4">
-          Vmail.DEV is provided on an "as is" and "as available" basis. We do
+          {/* Change 6 */}
+          Tmails.ONLINE is provided on an "as is" and "as available" basis. We do
           not warrant that our services will be uninterrupted, error-free, or
-          secure. Your use of Vmail.DEV is at your own risk, and we disclaim all
+          secure. Your use of Tmails.ONLINE is at your own risk, and we disclaim all
           warranties, whether express or implied, including but not limited to
           warranties of merchantability, fitness for a particular purpose, and
           non-infringement.
@@ -80,12 +84,13 @@ export function Terms() {
           5. Limitation of Liability
         </h2>
         <p className="mt-4">
-          To the maximum extent permitted by law, in no event shall Vmail.DEV or
+          {/* Change 7 */}
+          To the maximum extent permitted by law, in no event shall Tmails.ONLINE or
           its affiliates be liable for any indirect, incidental, special,
           consequential, or punitive damages, including without limitation, loss
           of profits, data, use, goodwill, or other intangible losses, resulting
-          from your access to or use of Vmail.DEV or any content or services
-          provided through Vmail.DEV.
+          from your access to or use of Tmails.ONLINE or any content or services
+          provided through Tmails.ONLINE.
         </p>
 
         <h2 className="mt-8 text-2xl font-bold" id="">
@@ -94,7 +99,7 @@ export function Terms() {
         <p className="mt-4">
           We reserve the right to modify these Terms at any time, without prior
           notice. Any changes to the Terms will be effective immediately upon
-          posting. Your continued use of Vmail.DEV after the posting of any
+          posting. Your continued use of Tmails.ONLINE after the posting of any
           modified Terms constitutes your acceptance of such changes.
         </p>
 
@@ -103,16 +108,17 @@ export function Terms() {
         </h2>
         <p className="mt-4">
           These Terms shall be governed by and construed in accordance with the
-          laws of the jurisdiction where Vmail.DEV is located. Any disputes
+          laws of the jurisdiction where Tmails.ONLINE is located. Any disputes
           arising out of or in connection with these Terms shall be subject to
           the exclusive jurisdiction of the courts in that jurisdiction.
         </p>
 
         <p className="mt-4">
           If you have any questions or concerns regarding these Terms, please
-          contact us.
+          contact us at hmdhsn5555@gmail.com.
         </p>
-        <p className="mt-8">Last updated: 2024-04-10</p>
+        {/* Change 8: Updated Date */}
+        <p className="mt-8">Last updated: December 08, 2025</p>
       </div>
     </div>
   );
