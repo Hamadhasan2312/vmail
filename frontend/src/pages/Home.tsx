@@ -58,8 +58,7 @@ export function Home() {
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [isTurnstileVerified, setIsTurnstileVerified] = useState(false);
   const [selectedEmail, setSelectedEmail] = useState<Email | null>(null); // 新增状态，用于存储当前选中的邮件
-  // [FIX A] Naya state added for Validator Input
-  const [validatorInput, setValidatorInput] = useState(""); 
+  // [REMOVED] Validator state yahan se hata diya gaya hai.
   const [selectedDomain, setSelectedDomain] = useState<string>(
     config.emailDomain[0]
   ); // feat: 新增状态，用于存储当前选中的域名
@@ -186,8 +185,8 @@ export function Home() {
     try {
       await verifyTurnstile(turnstileToken);
       setIsTurnstileVerified(true); // 验证通过
-      // [FIX C] Validator Input ko use karna hai.
-      const mailbox = `${randomName(validatorInput || "", getRandomCharacter())}@${selectedDomain}`;
+      // [FIXED] Validator hatne ke baad, random name generator ko khali string pass kiya gaya hai.
+      const mailbox = `${randomName("", getRandomCharacter())}@${selectedDomain}`;
       // feat: 计算并存储过期时间戳 (当前时间 + 24小时)
       const now = Date.now();
       const expires = now + 24 * 60 * 60 * 1000;
@@ -265,7 +264,7 @@ export function Home() {
   const handleLogin = async (password: string) => {
     setIsLoggingIn(true);
     try {
-      // fix: 调用更新后的 loginByPassword 函数，不再传递 token
+      // fix: 调用更新后的 loginByPassword 函数, login ke liye Validator zaroori hai.
       const data = await loginByPassword(password);
       // feat: 登录成功后也设置过期时间戳
       const now = Date.now();
@@ -385,16 +384,8 @@ export function Home() {
                 ))}
               </select>
             </div>
+            {/* [REMOVED] Validator label and input field yahan se hata diye gaye hain. */}
             <div className="text-sm relative mb-4">
-              <div className="mb-3 font-semibold">{t("Validater")}</div>
-              {/* [FIX B] MISSING VALIDATOR INPUT FIELD IS ADDED HERE */}
-              <input
-                type="text"
-                placeholder={t("Type your secret code or leave blank") as string}
-                value={validatorInput}
-                onChange={(e) => setValidatorInput(e.target.value)}
-                className="w-full p-2.5 rounded-md mb-2 bg-white/10 text-white border border-cyan-50/20 placeholder-gray-400"
-              />
               <div className="[&_iframe]:!w-full h-[65px] max-w-[300px] bg-gray-700">
                 <Turnstile
                   siteKey={config.turnstileKey}
@@ -419,8 +410,7 @@ export function Home() {
         )}
       </div>
 
-      {/* 右侧邮件列表或邮件详情 */}
-      {/* refactor: 始终渲染 MailList，并通过 selectedEmail prop 控制其内部显示逻辑 */}
+      {/* राइट साइड मेल लिस्ट */}
       <div className="w-full flex-1 overflow-hidden">
         <MailList
           isAddressCreated={!!address}
@@ -429,11 +419,10 @@ export function Home() {
           isFetching={isFetching}
           onDelete={handleDeleteEmails}
           isDeleting={deleteMutation.isPending}
-          onRefresh={handleRefresh} // feat: 传递新的刷新函数
+          onRefresh={handleRefresh}
           selectedIds={selectedIds}
           setSelectedIds={setSelectedIds}
-          onSelectEmail={handleSelectEmail} // 传递选择邮件的函数
-          // feat: 传递新状态和回调函数
+          onSelectEmail={handleSelectEmail}
           showViewPasswordButton={hasReceivedEmail}
           onShowPassword={() => {
             const password = getPassword();
@@ -441,10 +430,9 @@ export function Home() {
               showPasswordToast(password);
             }
           }}
-          // feat: 传递当前选中的邮件和关闭详情页的回调
           selectedEmail={selectedEmail}
           onCloseDetail={handleCloseDetail}
-          onExpand={handleExpandEmail} // feat: 传递展开邮件的回调
+          onExpand={handleExpandEmail}
         />
       </div>
     </div>
