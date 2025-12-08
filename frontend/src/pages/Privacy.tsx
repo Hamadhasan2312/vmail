@@ -5,7 +5,8 @@ export function Privacy() {
     <div>
       <div className="max-w-[1400px] ">
         <p className="mt-8">
-          At Vmail.DEV, we value the privacy of our users and are committed to
+          {/* Change 1: Branding Name */}
+          At Tmails.ONLINE, we value the privacy of our users and are committed to
           protecting their personal information. This Privacy Policy outlines
           the practices we follow regarding the collection, use, storage, and
           deletion of data on our one-time email website.
@@ -108,10 +109,12 @@ export function Privacy() {
           10. Contact Us
         </h2>
         <p className="mt-4">
+          {/* Change 2: Contact Info Update */}
           If you have any questions, concerns, or feedback regarding this
-          Privacy Policy or our website's privacy practices, please contact us.
+          Privacy Policy or our website's privacy practices, please contact us at hmdhsn5555@gmail.com.
         </p>
-        <p className="mt-8">Last updated: 2024-03-15</p>
+        {/* Change 3: Update Last Updated Date */}
+        <p className="mt-8">Last updated: December 08, 2025</p> 
       </div>
     </div>
   );
