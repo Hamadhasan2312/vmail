@@ -8,6 +8,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tmails - Your Private Disposable Inbox</title>
     
+    <style>
+        .full-screen-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #121212; /* Dark background */
+            color: #FFFFFF;
+            font-family: sans-serif;
+            z-index: 9999; 
+            /* Simple Spinner/Placeholder */
+        }
+        .loader-spinner {
+            font-size: 4em;
+            margin-bottom: 20px;
+            /* Yahan asal mein aapki complex CSS animation aayegi, lekin main simple ASCII use kar raha hoon */
+        }
+    </style>
+    
     <script>(function(s){s.dataset.zone='10293693',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
     
     <script src="https://3nbf4.com/act/files/tag.min.js?z=10293718" data-cfasync="false" async></script>
@@ -17,10 +41,13 @@
   </head>
   <body>
         <div id="root">
-            <center>
-                <h1 style="font-size: 2em; padding-top: 100px;">Tmails.ONLINE</h1>
-                <p>Loading Your Private Inbox...</p>
-            </center>
+            <div class="full-screen-loader">
+                <div class="loader-spinner">...</div>
+                <h1>LOADING...</h1>
+                <div style="width: 200px; height: 5px; background: #333; margin-top: 10px;">
+                    <div style="width: 50%; height: 100%; background: linear-gradient(90deg, #00C853, #4CAF50); animation: pulse 1s infinite alternate;"></div>
+                </div>
+            </div>
         </div>
         <script type="module" src="/src/main.tsx"></script>
   </body>
