@@ -5,7 +5,8 @@ export function About() {
     <div>
       <div className="max-w-[1400px] ">
         <p className="mt-8">
-          <strong>Vmail.DEV </strong> is a Virtual temporary email service.{" "}
+          {/* Change 1: Branding Name */}
+          <strong>Tmails.ONLINE </strong> is a Virtual temporary email service.{" "}
         </p>
         <p className="mt-4">
           You can get a temporary email without revealing any personal
@@ -32,10 +33,11 @@ export function About() {
         </h2>
         <p className="mt-4">
           All copyrights belong to{" "}
-          <a href="https://vmail.dev" rel="nofollow">
-            <strong>Vmail.DEV </strong>{" "}
+          {/* Change 2 & 3: URL and Copyright Name */}
+          <a href="https://tmails.online" rel="nofollow">
+            <strong>Tmails.ONLINE </strong>{" "}
           </a>
-          .{" "}
+          (Operated by Hamad Hassan).{" "}
         </p>
       </div>
     </div>
