@@ -58,7 +58,7 @@ export function Home() {
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [isTurnstileVerified, setIsTurnstileVerified] = useState(false);
   const [selectedEmail, setSelectedEmail] = useState<Email | null>(null); // 新增状态，用于存储当前选中的邮件
-  // [REMOVED] Validator state yahan se hata diya gaya hai.
+  // [REMOVED] Validator state removed.
   const [selectedDomain, setSelectedDomain] = useState<string>(
     config.emailDomain[0]
   ); // feat: 新增状态，用于存储当前选中的域名
@@ -185,7 +185,7 @@ export function Home() {
     try {
       await verifyTurnstile(turnstileToken);
       setIsTurnstileVerified(true); // 验证通过
-      // [FIXED] Validator hatne ke baad, random name generator ko khali string pass kiya gaya hai.
+      // Validator hatne ke baad, random name generator ko khali string pass kiya gaya hai.
       const mailbox = `${randomName("", getRandomCharacter())}@${selectedDomain}`;
       // feat: 计算并存储过期时间戳 (当前时间 + 24小时)
       const now = Date.now();
@@ -321,7 +321,7 @@ export function Home() {
         </InfoModal>
       )}
       <div className="flex flex-col text-white items-start w-full md:w-[350px] mx-auto gap-2">
-        {/* 左侧信息面板 */}
+        {/* लेफ्ट साइड इन्फॉर्मेशन पैनल */}
         <div className="w-full mb-4 md:max-w-[350px] shrink-0 group group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-cyan-600 hover:before:[box-shadow:_20px_20px_20px_30px_#a21caf] duration-500 before:duration-500 hover:duration-500 hover:after:-right-8 hover:before:right-12 hover:before:-bottom-8 hover:before:blur origin-left hover:decoration-2 relative bg-neutral-800 h-full border text-left p-4 rounded-lg overflow-hidden border-cyan-50/20 before:absolute before:w-12 before:h-12 before:content[''] before:right-1 before:top-1 before:z-10 before:bg-violet-500 before:rounded-full before:blur-lg  after:absolute after:z-10 after:w-20 after:h-20 after:content['']  after:bg-rose-300 after:right-8 after:top-3 after:rounded-full after:blur-lg">
           <h1 className="text-gray-50 text-xl font-bold mb-7 group-hover:text-cyan-500 duration-500">
             {t("Virtual Temporary Email")}
@@ -345,7 +345,7 @@ export function Home() {
           </div>
         </div>
 
-        {/* 根据是否存在邮箱地址显示不同内容 */}
+        {/* Adress maujood hone par ya na hone par content */}
         {address ? (
           <div className="w-full md:max-w-[350px] mb-4">
             <div className="mb-4 font-semibold text-sm">
@@ -355,7 +355,7 @@ export function Home() {
               <span className="truncate">{address}</span>
               <CopyButton text={address} className="p-1 rounded-md ml-auto" />
             </div>
-            {/* 修改：将 onExtend 更改为 onReset 并传递 handleResetExpiry */}
+            {/* Expiry Timer */}
             {expiryTimestamp && (
               <CountdownTimer
                 expiryTimestamp={expiryTimestamp}
@@ -370,7 +370,7 @@ export function Home() {
           </div>
         ) : (
           <div className="w-full md:max-w-[350px]">
-            {/* feat: 添加域名选择下拉框 */}
+            {/* Domain Selection */}
             <div className="mb-4">
               <div className="mb-3 font-semibold">{t("Domain")}</div>
               <select
@@ -384,7 +384,7 @@ export function Home() {
                 ))}
               </select>
             </div>
-            {/* [REMOVED] Validator label and input field yahan se hata diye gaye hain. */}
+            {/* Turnstile CAPTCHA (Validator field removed) */}
             <div className="text-sm relative mb-4">
               <div className="[&_iframe]:!w-full h-[65px] max-w-[300px] bg-gray-700">
                 <Turnstile
